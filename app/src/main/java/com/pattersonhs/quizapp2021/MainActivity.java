@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button trueButton;
     Button falseButton;
     Button nextButton;
+    Button viewHintButton;
     // declaring a score variable and a message string
     int score;
     String toastMessage;
@@ -36,15 +37,27 @@ public class MainActivity extends AppCompatActivity {
         trueButton = (Button) findViewById(R.id.true_button);
         falseButton = (Button) findViewById(R.id.false_button);
         nextButton = (Button) findViewById(R.id.next_button);
+        viewHintButton = (Button) findViewById(R.id.view_hint_button);
 
         // initializing variables for score and Questions
         score = 0;
         currentQindex = 0;
-        q1 = new Question("Pi is equal to 3", false);
-        q2 = new Question("Pi = C / d", true);
-        q3 = new Question("Pi is transcendental", true);
-        q4 = new Question("Pi is rational", false);
-        q5 = new Question("Pi is the best number!", true);
+        q1 = new Question("Pi is equal to 3",
+                false,
+                "Pi is approximately 3.14159");
+        q2 = new Question("Pi = C / d",
+                true,
+                "What is the definition of pi?");
+        q3 = new Question("Pi is transcendental",
+                true,
+                "A transcendental number is not the solution to any algebraic equation " +
+                        "with integer coefficients");
+        q4 = new Question("Pi is rational",
+                false,
+                "A rational number is the ratio of two integers");
+        q5 = new Question("Pi is the best number!",
+                true,
+                "You know this in your heart to be true!");
         questions = new Question[] {q1,q2,q3,q4,q5};
         currentQ = questions[currentQindex];
 
@@ -63,6 +76,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checkAnswer(false);
+            }
+        });
+
+        // when the view hint button is pressed, open a new activity with
+        // a hint shown; added hint as an attribute in the Question class also
+        viewHintButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewHintActivity.class);
+                intent.putExtra("hint", currentQ.getHint());
+                startActivity(intent);
             }
         });
 

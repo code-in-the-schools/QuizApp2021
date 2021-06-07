@@ -5,11 +5,20 @@ public class Question {
     // instance variables
     String questionText;
     boolean questionCorrectAnswer;
+    String hint;
 
-    // constructor
+    // constructor with just text and answer
     public Question(String questionText, boolean questionCorrectAnswer) {
         this.questionText = questionText;
         this.questionCorrectAnswer = questionCorrectAnswer;
+        this.hint = "No hint found";
+    }
+
+    //overloaded constructor with text, answer, and hint
+    public Question(String questionText, boolean questionCorrectAnswer, String hint) {
+        this.questionText = questionText;
+        this.questionCorrectAnswer = questionCorrectAnswer;
+        this.hint = hint;
     }
 
     // getters and setters
@@ -25,5 +34,10 @@ public class Question {
     public void setQuestionCorrectAnswer(boolean newCorrectAnswer) {
         this.questionCorrectAnswer = newCorrectAnswer;
     }
-
+    public String getHint() {
+        return hint;
+    }
+    public void setHint(String newHint) {
+        this.hint = newHint;
+    }
 }

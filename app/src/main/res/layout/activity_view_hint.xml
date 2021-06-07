@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@android:color/holo_green_light"
+    android:background="@android:color/holo_blue_light"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
@@ -12,16 +12,22 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        android:text="score: "
-        android:id="@+id/score_TV"
+        android:text="Hint: "
+        android:id="@+id/hint_TV"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
         />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:text="SEND SCORE VIA EMAIL"
-        android:id="@+id/send_score_BTN"
+        android:text="BACK TO QUESTION"
+        android:id="@+id/back_from_hint_BTN"
         />
 
 </LinearLayout>
