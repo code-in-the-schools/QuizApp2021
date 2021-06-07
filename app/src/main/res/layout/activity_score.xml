@@ -16,4 +16,11 @@
         android:id="@+id/score_TV"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SEND SCORE VIA EMAIL"
+        android:id="@+id/send_score_BTN"
+        />
+
 </LinearLayout>
