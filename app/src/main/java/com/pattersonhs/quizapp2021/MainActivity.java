@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Code complete through Unit 1 Lesson 8 Activities and Intents.
+    // Code complete through Unit 2 Lesson 2 Quiz App with OOP.
 
     // declaring the UI element variables
     TextView questionTextView;
