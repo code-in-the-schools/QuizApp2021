@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Code complete through Unit 1 Lesson 7 Quiz App Begins.
+
     // declaring the UI element variables
     TextView questionTextView;
     Button trueButton;
