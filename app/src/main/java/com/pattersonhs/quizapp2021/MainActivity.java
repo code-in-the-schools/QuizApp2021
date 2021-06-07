@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button trueButton;
     Button falseButton;
     Button nextButton;
+    Button viewHintButton;
     // declaring a score variable and a message string
     int score;
     String toastMessage;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         trueButton = (Button) findViewById(R.id.true_button);
         falseButton = (Button) findViewById(R.id.false_button);
         nextButton = (Button) findViewById(R.id.next_button);
+        viewHintButton = (Button) findViewById(R.id.view_hint_button);
 
         // initializing variables for score and Questions
         score = 0;
@@ -63,6 +65,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checkAnswer(false);
+            }
+        });
+
+        // when the view hint button is clicked, pass the intent the correct
+        // answer and start the view hint activity
+        viewHintButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewHintActivity.class);
+                intent.putExtra("answer", currentQ.getQuestionCorrectAnswer());
+                startActivity(intent);
             }
         });
 

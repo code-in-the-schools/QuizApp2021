@@ -38,6 +38,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="VIEW HINT"
+        android:id="@+id/view_hint_button"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="NEXT"
         android:id="@+id/next_button"
         />
