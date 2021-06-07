@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Aplicación de Prueba 2021</string>
+    <string name="true_btn_text">VERDADERO</string>
+    <string name="false_btn_text">FALSO</string>
+    <string name="next_btn_text">Próxima</string>
+    <string name="hint_btn_text">Ver un Indicio</string>
+    <string name="q1">Pi es igual a 3</string>
+    <string name="q2">Pi = C / d</string>
+    <string name="q3">Pi es transcendental</string>
+    <string name="q4">Pi es racional</string>
+    <string name="q5">¡Pi es el mejor numero!</string>
+    <string name="q1h">Pi es aproximadamente 3.14159</string>
+    <string name="q2h">¿Cual es la definición de pi?</string>
+    <string name="q3h">Un número transcendental es un número que no esta la solución
+        a ninguna ecuación alebraico con coeficientes enteros</string>
+    <string name="q4h">Un número racional es un número que puede expresar como
+        la proporción de dos enteros</string>
+    <string name="q5h">¡Sabes en tu corazón que esto es la verdad!</string>
+    <string name="toast_correct">¡Correcto!</string>
+    <string name="toast_incorrect">Incorrecto.</string>
+    <string name="hint_text">Inicio: </string>
+    <string name="back_to_question">VOLVER A LA PREGUNTA</string>
+    <string name="score_text">Puntaje: </string>
+    <string name="email_score">ENVIAR POR EMAIL</string>
+    <string name="score_email_starter_text">¡Hola! \n Has ganado el puntaje: </string>
+    <string name="score_TV_starter_text">Puntaje: </string>
+    <string name="score_email_subject">Puntaje Nuevo en la Aplicación de Prueba</string>
+    <string name="no_hint_msg">Inicio no encontrada</string>
+</resources>
