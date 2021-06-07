@@ -17,9 +17,14 @@ public class MainActivity extends AppCompatActivity {
     TextView questionTextView;
     Button trueButton;
     Button falseButton;
-    Button finishedButton;
-    // declaring a score variable
+    Button nextButton;
+    // declaring a score variable and a message string
     int score;
+    String toastMessage;
+    // declaring variables for our question objects, the array, and counter
+    Question q1, q2, q3, q4, q5, currentQ;
+    Question[] questions;
+    int currentQindex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,45 +35,73 @@ public class MainActivity extends AppCompatActivity {
         questionTextView = (TextView) findViewById(R.id.question_text);
         trueButton = (Button) findViewById(R.id.true_button);
         falseButton = (Button) findViewById(R.id.false_button);
-        finishedButton = (Button) findViewById(R.id.finished_button);
+        nextButton = (Button) findViewById(R.id.next_button);
 
-        // onClick listener and method for the true button,
-        // will display toast stating they got it wrong
-        // and set the score to 0%
+        // initializing variables for score and Questions
+        score = 0;
+        currentQindex = 0;
+        q1 = new Question("Pi is equal to 3", false);
+        q2 = new Question("Pi = C / d", true);
+        q3 = new Question("Pi is transcendental", true);
+        q4 = new Question("Pi is rational", false);
+        q5 = new Question("Pi is the best number!", true);
+        questions = new Question[] {q1,q2,q3,q4,q5};
+        currentQ = questions[currentQindex];
+
+        // onClick listener and method for the false button,
+        // will display toast and update score based on right/wrong answer
         trueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,
-                        "Nope, pi is irrational.",
-                        Toast.LENGTH_SHORT).show();
-                score = 0;
+                checkAnswer(true);
             }
         });
 
         // onClick listener and method for the false button,
-        // will display toast stating they got it right
-        // and set the score to 100%
+        // will display toast and update score based on right/wrong answer
         falseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,
-                        "Correct! Nice job!",
-                        Toast.LENGTH_SHORT).show();
-                score = 100;
+                checkAnswer(false);
             }
         });
 
-        // when the finished button is clicked, we
-        // declare an intent, pass the score as an "extra",
-        // then open the ScoreActivity to display the score
-        finishedButton.setOnClickListener(new View.OnClickListener() {
+        // when the next button is clicked, if we're at the end of the array,
+        // we declare an intent, pass the score as an "extra",
+        // then open the ScoreActivity to display the score;
+        // otherwise we advance to the next question, including
+        // advancing the index counter, advancing the currentQ object, and
+        // displaying the correct question text on screen
+        nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ScoreActivity.class);
-                intent.putExtra("score", score);
-                startActivity(intent);
+                if (currentQindex>=questions.length-1) {
+                    Intent intent = new Intent(MainActivity.this, ScoreActivity.class);
+                    intent.putExtra("score", score);
+                    startActivity(intent);
+                }
+                else {
+                    currentQindex++;
+                    currentQ = questions[currentQindex];
+                    questionTextView.setText(currentQ.getQuestionText());
+                }
             }
         });
 
+    }
+
+    // helper method for checking correct answer, updating score, and displaying toast
+    private void checkAnswer(boolean buttonPressed) {
+        if (currentQ.getQuestionCorrectAnswer()==buttonPressed) {
+            // correct answer matches the button they pressed
+            toastMessage = "Correct! Nice job!";
+            score++;
+        }
+        else {
+            // correct answer does not match which button they pressed
+            toastMessage = "Nope, that's wrong.";
+        }
+        Toast.makeText(MainActivity.this,
+                toastMessage, Toast.LENGTH_SHORT).show();
     }
 }

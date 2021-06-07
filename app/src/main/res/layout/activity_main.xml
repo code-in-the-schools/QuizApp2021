@@ -38,8 +38,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FINISHED"
-        android:id="@+id/finished_button"
+        android:text="NEXT"
+        android:id="@+id/next_button"
         />
 
 </LinearLayout>
