@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        android:text="score: "
+        android:text="@string/score_text"
         android:id="@+id/score_TV"
         />
 
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:text="SEND SCORE VIA EMAIL"
+        android:text="@string/email_score"
         android:id="@+id/send_score_BTN"
         />
 

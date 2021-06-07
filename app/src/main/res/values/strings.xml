@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Quiz App 2021</string>
+    <string name="true_btn_text">TRUE</string>
+    <string name="false_btn_text">FALSE</string>
+    <string name="next_btn_text">NEXT</string>
+    <string name="hint_btn_text">VIEW HINT</string>
+    <string name="q1">Pi is equal to 3</string>
+    <string name="q2">Pi = C / d</string>
+    <string name="q3">Pi is transcendental</string>
+    <string name="q4">Pi is rational</string>
+    <string name="q5">Pi is the best number!</string>
+    <string name="q1h">Pi is approximately 3.14159</string>
+    <string name="q2h">What is the definition of pi?</string>
+    <string name="q3h">A transcendental number is not the solution to any algebraic equation
+        with integer coefficients</string>
+    <string name="q4h">A rational number is the ratio of two integers</string>
+    <string name="q5h">You know this in your heart to be true!</string>
+    <string name="toast_correct">Correct! Nice job!</string>
+    <string name="toast_incorrect">Nope, that\'s wrong.</string>
+    <string name="hint_text">Hint:</string>
+    <string name="back_to_question">BACK TO QUESTION</string>
+    <string name="score_text">score:</string>
+    <string name="email_score">SEND SCORE VIA EMAIL</string>
+    <string name="score_email_starter_text">Hello! \n Your score is: </string>
+    <string name="score_TV_starter_text">Score: </string>
+    <string name="score_email_subject">new score on quiz app</string>
+    <string name="no_hint_msg">No hint found</string>
 </resources>

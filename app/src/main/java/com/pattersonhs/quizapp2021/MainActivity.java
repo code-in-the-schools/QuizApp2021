@@ -42,22 +42,21 @@ public class MainActivity extends AppCompatActivity {
         // initializing variables for score and Questions
         score = 0;
         currentQindex = 0;
-        q1 = new Question("Pi is equal to 3",
+        q1 = new Question(getString(R.string.q1),
                 false,
-                "Pi is approximately 3.14159");
-        q2 = new Question("Pi = C / d",
+                getString(R.string.q1h));
+        q2 = new Question(getString(R.string.q2),
                 true,
-                "What is the definition of pi?");
-        q3 = new Question("Pi is transcendental",
+                getString(R.string.q2h));
+        q3 = new Question(getString(R.string.q3),
                 true,
-                "A transcendental number is not the solution to any algebraic equation " +
-                        "with integer coefficients");
-        q4 = new Question("Pi is rational",
+                getString(R.string.q3h));
+        q4 = new Question(getString(R.string.q4),
                 false,
-                "A rational number is the ratio of two integers");
-        q5 = new Question("Pi is the best number!",
+                getString(R.string.q4h));
+        q5 = new Question(getString(R.string.q5),
                 true,
-                "You know this in your heart to be true!");
+                getString(R.string.q5h));
         questions = new Question[] {q1,q2,q3,q4,q5};
         currentQ = questions[currentQindex];
 
@@ -118,12 +117,12 @@ public class MainActivity extends AppCompatActivity {
     private void checkAnswer(boolean buttonPressed) {
         if (currentQ.getQuestionCorrectAnswer()==buttonPressed) {
             // correct answer matches the button they pressed
-            toastMessage = "Correct! Nice job!";
+            toastMessage = getString(R.string.toast_correct);
             score++;
         }
         else {
             // correct answer does not match which button they pressed
-            toastMessage = "Nope, that's wrong.";
+            toastMessage = getString(R.string.toast_incorrect);
         }
         Toast.makeText(MainActivity.this,
                 toastMessage, Toast.LENGTH_SHORT).show();

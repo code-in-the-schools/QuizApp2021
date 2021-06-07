@@ -12,6 +12,10 @@ public class Question {
         this.questionText = questionText;
         this.questionCorrectAnswer = questionCorrectAnswer;
         this.hint = "No hint found";
+        // this above is bad form but getting string from OO class
+        // is very difficult without Android Activity Context;
+        // one possibility: we could switch the type to an int as the resource ID
+        // (for both the qText and the hint); will leave hard-coded for now
     }
 
     //overloaded constructor with text, answer, and hint

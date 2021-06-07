@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pi is equal to 3."
+        android:text="@string/q1"
         android:id="@+id/question_text"
         />
 
@@ -22,14 +22,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TRUE"
+            android:text="@string/true_btn_text"
             android:id="@+id/true_button"
             />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FALSE"
+            android:text="@string/false_btn_text"
             android:id="@+id/false_button"
             />
 
@@ -38,14 +38,14 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="VIEW HINT"
+        android:text="@string/hint_btn_text"
         android:id="@+id/view_hint_button"
         />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NEXT"
+        android:text="@string/next_btn_text"
         android:id="@+id/next_button"
         />
 

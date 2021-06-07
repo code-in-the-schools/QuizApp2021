@@ -32,10 +32,10 @@ public class ScoreActivity extends AppCompatActivity {
         // inflating UI elements and initializing variables
         scoreTV = (TextView) findViewById(R.id.score_TV);
         sendScoreBTN = (Button) findViewById(R.id.send_score_BTN);
-        emailMessage = "Your score is: " + score + ".";
+        emailMessage = getString(R.string.score_email_starter_text) + score;
 
         //concatenating the string score with the numerical score
-        scoreTV.setText("Score: " + score);
+        scoreTV.setText(getString(R.string.score_TV_starter_text) + score);
 
         // implicit intent to send email
         // each student should use their own email address,
@@ -44,9 +44,8 @@ public class ScoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String [] addresses = new String[] {"yates.code@gmail.com"};
-                String subject = "new score on quiz app";
-                String body = "Hello!\n" + emailMessage;
-                composeEmail(addresses, subject, body);
+                String subject = getString(R.string.score_email_subject);
+                composeEmail(addresses, subject, emailMessage);
             }
         });
 

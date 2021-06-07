@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        android:text="Hint: "
+        android:text="@string/hint_text"
         android:id="@+id/hint_TV"
         />
 
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:text="BACK TO QUESTION"
+        android:text="@string/back_to_question"
         android:id="@+id/back_from_hint_BTN"
         />
 
